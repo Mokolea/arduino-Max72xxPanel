@@ -171,6 +171,10 @@ void Max72xxPanel::write() {
 	}
 }
 
+void Max72xxPanel::writeDisplay() {
+  write();
+}
+
 void Max72xxPanel::spiTransfer(byte opcode, byte data) {
 	// If opcode > OP_DIGIT7, send the opcode and data to all displays.
 	// If opcode <= OP_DIGIT7, display the column with data in our buffer for all displays.

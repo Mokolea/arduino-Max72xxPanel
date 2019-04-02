@@ -99,6 +99,11 @@ public:
    */
   void write();
 
+  /*
+   * Compatibility
+   */
+  void writeDisplay();
+
 private:
   byte SPI_CS; /* SPI chip selection */
 
