@@ -50,7 +50,9 @@ Max72xxPanel::Max72xxPanel(byte csPin, byte hDisplays, byte vDisplays) : Adafrui
   	matrixPosition[display] = display;
   	matrixRotation[display] = 0;
   }
+}
 
+void Max72xxPanel::begin(byte intensity) {
   SPI.begin();
 //SPI.setBitOrder(MSBFIRST);
 //SPI.setDataMode(SPI_MODE0);
@@ -71,8 +73,8 @@ Max72xxPanel::Max72xxPanel(byte csPin, byte hDisplays, byte vDisplays) : Adafrui
   // Enable display
   shutdown(false);
 
-  // Set the brightness to a medium value
-  setIntensity(7);
+  // Set the brightness
+  setIntensity(intensity);
 }
 
 void Max72xxPanel::setPosition(byte display, byte x, byte y) {
